@@ -1,0 +1,61 @@
+version: "3.8"
+
+x-common-variables: &common-variables
+  MYSQL_USER: powercoders
+  MYSQL_PASSWORD: mypower1234
+  MYSQL_DATABASE: powercod
+  CLIENT_PORT: 8000
+
+services:
+  mysql-db:
+    image: mysql:5.7
+    container_name: mysql_powercoders
+    environment:
+      <<: *common-variables
+      MYSQL_HOST: localhost
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+  phpmyadmin:
+    depends_on:
+      - mysql-db
+    image: phpmyadmin/phpmyadmin
+    container_name: mysqladmin_powercoders
+    environment:
+      PMA_HOST: mysql-db
+    links:
+      - mysql-db:mysql-db
+    ports:
+      - 8080:80
+    restart: always
+  server:
+    build: ./server
+    container_name: server_powercoders
+    depends_on:
+      - mysql-db
+    environment:
+      <<: *common-variables
+      MYSQL_HOST_IP: mysql-db
+    ports:
+      - 8000:8000
+    volumes:
+      - ./server:/app
+    links:
+      - mysql-db
+    command: npm start
+  client:
+    build: ./client
+    container_name: client_powercoders
+    environment:
+      <<: *common-variables
+      NODE_PATH: src
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client/src:/app/src
+    links:
+      - server
+    command: npm start
