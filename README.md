@@ -8,8 +8,10 @@ The client (port 3000) is a React app that take the server api (port 8000) and d
 
 ## How to use
 
-You need Docker installed on your machine (https://www.docker.com/products/docker-desktop).
 ---
+#### You need Docker installed on your machine (https://www.docker.com/products/docker-desktop).
+---
+
 Clone this repo
 
 `git clone git@github.com:mifrugo/powercoders-docker.git`
