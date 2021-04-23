@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql
--- Generation Time: Jun 27, 2019 at 01:14 AM
--- Server version: 5.7.26
--- PHP Version: 7.2.19
+-- Host: mysql-db
+-- Generation Time: Apr 23, 2021 at 09:24 AM
+-- Server version: 5.7.33
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,53 +18,100 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sampledb`
+-- Database: `powercoders-demo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sample`
+-- Table structure for table `passwords`
 --
 
-CREATE TABLE `sample` (
-  `id` int(255) NOT NULL,
-  `name` varchar(100) NOT NULL
+CREATE TABLE `passwords` (
+  `whale_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sample`
+-- Dumping data for table `passwords`
 --
 
-INSERT INTO `sample` (`id`, `name`) VALUES
-(1, 'Mercury'),
-(2, 'Venus'),
-(3, 'Earth'),
-(4, 'Mars'),
-(5, 'Jupiter'),
-(6, 'Saturn'),
-(7, 'Uranus'),
-(8, 'Neptune');
+INSERT INTO `passwords` (`whale_id`, `password`) VALUES
+(1, 'roar'),
+(6, 'wohowho'),
+(12, 'ahahwuy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `whales`
+--
+
+CREATE TABLE `whales` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `whales`
+--
+
+INSERT INTO `whales` (`id`, `name`) VALUES
+(6, 'Balaena Mysticetus'),
+(12, 'Balaenoptera Acutorostrata'),
+(13, 'Balaenoptera Bonaerensis'),
+(4, 'Balaenoptera Borealis'),
+(10, 'Balaenoptera Edeni'),
+(2, 'Balaenoptera Musculus'),
+(11, 'Balaenoptera Omurai\r\n'),
+(3, 'Balaenoptera Physalus'),
+(15, 'Delphinapterus Leucas'),
+(8, 'Eubalaena Australis'),
+(7, 'Eubalaena Glacialis'),
+(9, 'Eubalaena Japonica'),
+(17, 'Grampus Griseus'),
+(18, 'Kogia Breviceps'),
+(5, 'Megaptera Novaeangliae'),
+(1, 'Orcinus Orca'),
+(14, 'Physeter Macrocephalus'),
+(16, 'Tursiops Truncatus');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `sample`
+-- Indexes for table `passwords`
 --
-ALTER TABLE `sample`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `passwords`
+  ADD UNIQUE KEY `whale` (`whale_id`);
+
+--
+-- Indexes for table `whales`
+--
+ALTER TABLE `whales`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `sample`
+-- AUTO_INCREMENT for table `whales`
 --
-ALTER TABLE `sample`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `whales`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `passwords`
+--
+ALTER TABLE `passwords`
+  ADD CONSTRAINT `whale_id` FOREIGN KEY (`whale_id`) REFERENCES `whales` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

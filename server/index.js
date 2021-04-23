@@ -20,7 +20,7 @@ app.listen(process.env.CLIENT_PORT, () => {
 app.get('/', (req, res) => {
   const { table } = req.query;
 
-  pool.query(`select * from ${table}`, (err, results) => {
+  pool.query(`SELECT * FROM ${table}`, (err, results) => {
     return err ? res.send(err) : res.send(results)
   });
 });

@@ -2,9 +2,10 @@ import React from 'react';
 import axios from 'axios';
 
 function callServer() {
-  axios.get(`http://localhost:${process.env.CLIENT_PORT}/test`, {
+  console.log(process.env)
+  axios.get(`http://localhost:8000/`, {
     params: {
-      table: 'sample',
+      table: 'whales',
     },
   }).then((response) => {
     console.log(response.data);
@@ -14,7 +15,7 @@ function callServer() {
 export function SampleComponent() {
   return (
     <div>
-      This is a sample component
+      This is a sample component!
       {callServer()}
     </div>
   );
