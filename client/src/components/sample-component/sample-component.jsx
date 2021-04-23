@@ -2,8 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 function callServer() {
-  console.log(process.env)
-  axios.get(`http://localhost:8000/`, {
+  axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/`, {
     params: {
       table: 'whales',
     },
