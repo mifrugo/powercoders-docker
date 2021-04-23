@@ -16,7 +16,13 @@ Clone this repo
 
 `git clone git@github.com:mifrugo/powercoders-docker.git`
 
-Start the whole environment with docker compose (-d to detach from the console):
+Go to the server folder to build the node application
+
+`cd server
+
+npm install`
+
+Go back to the root folder and start the environment with docker compose (-d to detach from the console):
 
 `docker-compose up -d`
 OR
