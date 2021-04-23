@@ -18,9 +18,12 @@ Clone this repo
 
 Go to the server folder to build the node application
 
-`cd server
-
-npm install`
+```bash
+cd server
+```
+```js
+npm install
+```
 
 Go back to the root folder and start the environment with docker compose (-d to detach from the console):
 
