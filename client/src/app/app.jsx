@@ -1,9 +1,11 @@
-import React from 'react';
-import { SampleComponent } from 'components';
-
+import React from "react";
+import Game from "./components/Game";
+import "./styles/app.css";
 function App() {
   return (
-    <SampleComponent />
+    <div className="main">
+      <Game />
+    </div>
   );
 }
 

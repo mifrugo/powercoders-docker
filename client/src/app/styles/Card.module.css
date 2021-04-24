@@ -1,0 +1,63 @@
+.card {
+  font-family: "Comfortaa";
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  margin: 20px;
+  animation: mount 2s;
+  transition: 300ms ease-in;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  flex-direction: column;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.front {
+  transform: rotateX(0deg);
+  box-shadow: 0 0 10px rgb(75, 84, 90);
+}
+
+.back {
+  box-shadow: 0 0 2px rgb(204, 215, 223);
+  background: white;
+  color: #2b96ed;
+  font-size: 1.5rem;
+  position: absolute;
+  transform: rotateY(180deg);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+@keyframes mount {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
