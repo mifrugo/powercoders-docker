@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "../styles/Card.module.css";
 
-export default function Card({ image, name, latinName }) {
+export default function Card({ image, name, latinName, currentLang }) {
   const [flip, setFlip] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ export default function Card({ image, name, latinName }) {
         />
       </div>
       <div className={style.back}>
-        <p>{name}</p>
+        <p>{currentLang === "English" ? name : latinName}</p>
       </div>
     </div>
   );

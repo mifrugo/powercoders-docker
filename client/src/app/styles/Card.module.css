@@ -14,7 +14,6 @@
   font-family: "Comfortaa", cursive;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 0 5px rgb(75, 84, 90);
   overflow: hidden;
   width: 200px;
   height: 200px;
@@ -33,9 +32,14 @@
 
 .front {
   transform: rotateX(0deg);
+  box-shadow: 0 0 10px rgb(75, 84, 90);
 }
 
 .back {
+  box-shadow: 0 0 2px rgb(204, 215, 223);
+  background: white;
+  color: #2b96ed;
+  font-size: 1.5rem;
   position: absolute;
   transform: rotateY(180deg);
 }

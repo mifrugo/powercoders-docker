@@ -1,5 +1,6 @@
 .board {
   margin: 0 auto;
+  padding: 50px 0;
   width: 90vw;
   display: flex;
   flex-flow: row wrap;
