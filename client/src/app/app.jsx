@@ -1,13 +1,9 @@
 import React from "react";
 import Game from "./components/Game";
-
+import "./styles/app.css";
 function App() {
   return (
-    <div
-      style={{
-        margin: "0 auto",
-      }}
-    >
+    <div className="main">
       <Game />
     </div>
   );

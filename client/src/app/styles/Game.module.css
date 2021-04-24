@@ -1,6 +1,6 @@
 .board {
   margin: 0 auto;
-  width: 80vw;
+  width: 90vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
