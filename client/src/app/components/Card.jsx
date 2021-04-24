@@ -13,7 +13,12 @@ export default function Card({ image, name, latinName }) {
       }}
     >
       <div className={style.front}>
-        <img className={style.image} src={image} alt={latinName} />
+        <img
+          className={style.image}
+          src={image}
+          alt={latinName}
+          loading="lazy"
+        />
       </div>
       <div className={style.back}>
         <p>{name}</p>
