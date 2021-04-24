@@ -14,13 +14,28 @@ The client (port 3000) is a React app that take the server api (port 8000) and d
 
 Clone this repo
 
-`git clone git@github.com:mifrugo/powercoders-docker.git`
+```
+git clone git@github.com:mifrugo/powercoders-docker.git
+```
 
-Start the whole environment with docker compose (-d to detach from the console):
+Go to the server folder to build the node application
 
-`docker-compose up -d`
+```bash
+cd server
+```
+```js
+npm install
+```
+
+Go back to the root folder and start the environment with docker compose (-d to detach from the console):
+
+```
+docker-compose up -d
+```
 OR
-`docker compose up -d`
+```
+docker compose up -d
+```
 
 ## IMPORTANT: Do NOT use this project in production
 This is a demo project, it has severe security issues (passwords exposed, sql injections, etc.) left un-checked for teaching purposes.
