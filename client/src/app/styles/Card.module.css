@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+.card {
+  font-family: "Comfortaa";
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  margin: 10px;
+  transition: 300ms ease-in;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  font-family: "Comfortaa", cursive;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgb(143, 150, 180);
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  flex-direction: column;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.front {
+  transform: rotateX(0deg);
+}
+
+.back {
+  position: absolute;
+  transform: rotateY(180deg);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}

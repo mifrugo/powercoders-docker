@@ -1,9 +1,15 @@
-import React from 'react';
-import { SampleComponent } from 'components';
+import React from "react";
+import Game from "./components/Game";
 
 function App() {
   return (
-    <SampleComponent />
+    <div
+      style={{
+        margin: "0 auto",
+      }}
+    >
+      <Game />
+    </div>
   );
 }
 
