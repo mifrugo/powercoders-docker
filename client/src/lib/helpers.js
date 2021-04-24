@@ -9,6 +9,6 @@ export async function callServer() {
       },
     }
   );
-  console.log(resp.data);
+
   return resp.data;
 }

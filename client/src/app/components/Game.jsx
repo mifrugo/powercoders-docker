@@ -21,11 +21,11 @@ export default function Game() {
   };
 
   const toggleLang = () => {
-    console.log("button");
     setLang(lang === "English" ? "Latin" : "English");
   };
 
   const buttonLang = lang === "English" ? "Latin" : "English";
+
   return (
     <>
       {!play ? (
