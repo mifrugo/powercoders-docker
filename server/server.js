@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
-
+const fs = require('fs')
 const app = express();
 
 app.use(cors())
@@ -24,3 +24,9 @@ app.get('/', (req, res) => {
     return err ? res.send(err) : res.send(results)
   });
 });
+
+// app.get('/proc', (_, res) => {
+//   fs.readFile('/proc/1/cpuset', 'utf8', function (_, data) {
+//     return res.send(`Running on docker container: <b>${data.replace("/docker/", "")}</b>`)
+//   })
+// });
